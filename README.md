@@ -1,6 +1,8 @@
 # Nightly ESP8266 Deauther Builds
 
-Under [releases](releases) you can find daily compiled .bin files.  
+![Build V3](https://github.com/SpacehuhnTech/nightly-deauther/workflows/Build%20V3/badge.svg)
+
+Find the latest .bin files under **[releases](https://github.com/SpacehuhnTech/nightly-deauther/releases)**.
 
 **Please note:**   
 * They are compiled using the default settings for an ESP8266 with 1MB flash.  
