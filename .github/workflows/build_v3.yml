@@ -1,4 +1,4 @@
-name: Build ESP8266 Deauther V3
+name: Build V3
 
 on: [repository_dispatch]
 
