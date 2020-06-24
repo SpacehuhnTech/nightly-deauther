@@ -2,7 +2,7 @@
 
 ![Build V3](https://github.com/SpacehuhnTech/nightly-deauther/workflows/Build%20V3/badge.svg)
 
-Find the latest .bin files under **[releases](https://github.com/SpacehuhnTech/nightly-deauther/releases)**.
+[**Click here to download the latest .bin file**](https://github.com/SpacehuhnTech/nightly-deauther/releases/download/Nightly-V3/esp8266_deauther_V3_1M_Nightly.bin)
 
 **Please note:**   
 * They are compiled using the default settings for an ESP8266 with 1MB flash.  
