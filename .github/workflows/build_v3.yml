@@ -37,7 +37,7 @@ jobs:
         run: ~/bin/arduino-cli lib install SimpleCLI
         
       - name: Compile
-        run: ~/bin/arduino-cli compile esp8266_deauther --fqbn deauther:esp8266:dstike -o esp8266_deauther.bin
+        run: ~/bin/arduino-cli compile esp8266_deauther --fqbn deauther:esp8266:dstike --output-dir build
       
       - name: Get current time
         uses: 1466587594/get-current-time@v1
@@ -52,7 +52,7 @@ jobs:
           TIME: "${{ steps.current-time.outputs.formattedTime }}"
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: esp8266_deauther.bin
+          file: build/esp8266_deauther.ino.bin
           asset_name: esp8266_deauther_V3_1M_Nightly.bin
           tag: Nightly-V3
           overwrite: true
