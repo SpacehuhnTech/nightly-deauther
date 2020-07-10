@@ -26,18 +26,12 @@ jobs:
       
       - name: Download Board Indices
         run: ~/bin/arduino-cli core update-index
-            
-      - name: Install ESP8266 Board
-        run: ~/bin/arduino-cli core install esp8266:esp8266
         
       - name: Install Deauther Board
         run: ~/bin/arduino-cli core install deauther:esp8266
-
-      - name: Install SimpleCLI Library
-        run: ~/bin/arduino-cli lib install SimpleCLI
         
       - name: Compile
-        run: ~/bin/arduino-cli compile esp8266_deauther --fqbn deauther:esp8266:dstike --output-dir build
+        run: ~/bin/arduino-cli compile esp8266_deauther --fqbn deauther:esp8266:d1_mini --output-dir build
       
       - name: Get current time
         uses: 1466587594/get-current-time@v1
