@@ -48,5 +48,5 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: build/esp8266_deauther.ino.bin
           asset_name: esp8266_deauther_V3_1M_Nightly.bin
-          tag: Nightly-V3
+          tag: nightly
           overwrite: true
