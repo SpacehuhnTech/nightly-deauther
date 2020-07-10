@@ -1,11 +1,11 @@
-name: Deauther V2.5
+name: Nightly build
 
 on: [repository_dispatch]
 
 jobs:
 
-  build-deauther-v2.5:
-    if: startsWith(github.event.action, "Deauther V2.5")
+  build-deauther-v2_5:
+    if: startsWith(github.event.action, 'Deauther V2.5')
     name: "Compile ESP8266 Deauther V2.5 .bin file"
     runs-on: ubuntu-latest
     steps:
@@ -53,7 +53,7 @@ jobs:
           overwrite: true
           
   build-deauther-v3:
-    if: startsWith(github.event.action, "Deauther V3")
+    if: startsWith(github.event.action, 'Deauther V3')
     name: "Build ESP8266 Deauther V3 .bin file"
     runs-on: ubuntu-latest
     steps:
