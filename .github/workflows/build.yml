@@ -1,0 +1,101 @@
+name: Deauther V2.5
+
+on: [repository_dispatch]
+
+jobs:
+
+  build-deauther-v2.5:
+    if: startsWith(github.event.action, "Deauther V2.5")
+    name: "Compile ESP8266 Deauther V2.5 .bin file"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.4.0
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Clone esp8266_deauther
+        uses: actions/checkout@v2
+        with:
+          repository: 'SpacehuhnTech/esp8266_deauther'
+          ref: 'v2.5'
+
+      - name: Install Arduino CLI
+        run: |
+            mkdir ~/bin
+            curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=~/bin sh
+      
+      - name: Download Board Indices
+        run: ~/bin/arduino-cli core update-index
+        
+      - name: Install Deauther Board
+        run: ~/bin/arduino-cli core install deauther:esp8266
+        
+      - name: Compile
+        run: ~/bin/arduino-cli compile esp8266_deauther --fqbn deauther:esp8266:d1_mini --output-dir build
+      
+      - name: Get current time
+        uses: 1466587594/get-current-time@v1
+        id: current-time
+        with:
+          format: YYYY_MM_DD
+#          utcOffset: "+08:00"
+
+      - name: Upload binaries
+        uses: svenstaro/upload-release-action@v1-release
+        env:
+          TIME: "${{ steps.current-time.outputs.formattedTime }}"
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: build/esp8266_deauther.ino.bin
+          asset_name: esp8266_deauther_V2.5_1M_Nightly.bin
+          tag: nightly
+          overwrite: true
+          
+  build-deauther-v3:
+    if: startsWith(github.event.action, "Deauther V3")
+    name: "Build ESP8266 Deauther V3 .bin file"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.4.0
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Clone esp8266_deauther
+        uses: actions/checkout@v2
+        with:
+          repository: 'SpacehuhnTech/esp8266_deauther'
+          ref: 'v3'
+
+      - name: Install Arduino CLI
+        run: |
+            mkdir ~/bin
+            curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=~/bin sh
+      
+      - name: Download Board Indices
+        run: ~/bin/arduino-cli core update-index
+        
+      - name: Install Deauther Board
+        run: ~/bin/arduino-cli core install deauther:esp8266
+        
+      - name: Compile
+        run: ~/bin/arduino-cli compile esp8266_deauther --fqbn deauther:esp8266:d1_mini --output-dir build
+      
+      - name: Get current time
+        uses: 1466587594/get-current-time@v1
+        id: current-time
+        with:
+          format: YYYY_MM_DD
+#          utcOffset: "+08:00"
+
+      - name: Upload binaries
+        uses: svenstaro/upload-release-action@v1-release
+        env:
+          TIME: "${{ steps.current-time.outputs.formattedTime }}"
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: build/esp8266_deauther.ino.bin
+          asset_name: esp8266_deauther_V3_1M_Nightly.bin
+          tag: nightly
+          overwrite: true
