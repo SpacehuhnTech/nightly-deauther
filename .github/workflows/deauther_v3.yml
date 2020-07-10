@@ -1,4 +1,4 @@
-name: Build Deauther V3 Nightly
+name: Deauther V3
 
 on: [repository_dispatch]
 
