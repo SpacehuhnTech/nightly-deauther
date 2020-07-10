@@ -1,8 +1,8 @@
 # Nightly ESP8266 Deauther Builds
 
-![Build V3](https://github.com/SpacehuhnTech/nightly-deauther/workflows/Build%20V3/badge.svg)
+![Deauther V3](https://github.com/SpacehuhnTech/nightly-deauther/workflows/Deauther%20V3/badge.svg)
 
-[**Click here to download the latest .bin file**](https://github.com/SpacehuhnTech/nightly-deauther/releases/download/Nightly-V3/esp8266_deauther_V3_1M_Nightly.bin)
+[**Click here to download the latest .bin file**](https://github.com/SpacehuhnTech/nightly-deauther/releases/download/nightly/esp8266_deauther_V3_1M_Nightly.bin)
 
 **Please note:**   
 * They are compiled using the default settings for an ESP8266 with 1MB flash.  
