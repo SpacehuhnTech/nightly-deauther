@@ -1,6 +1,6 @@
 # Nightly ESP8266 Deauther Builds
 
-[**Download latest Deauther V2.5 .bin**](https://github.com/SpacehuhnTech/nightly-deauther/releases/download/nightly/esp8266_deauther_V2.5_1M_Nightly.bin)
+[**Download latest Deauther V2 .bin**](https://github.com/SpacehuhnTech/nightly-deauther/releases/download/nightly/esp8266_deauther_V2_1M_Nightly.bin)
 
 [**Download latest Deauther V3 .bin**](https://github.com/SpacehuhnTech/nightly-deauther/releases/download/nightly/esp8266_deauther_V3_1M_Nightly.bin)
 
