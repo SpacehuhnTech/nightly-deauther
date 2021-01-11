@@ -4,9 +4,9 @@ on: [repository_dispatch]
 
 jobs:
 
-  build-deauther-v2_5:
-    if: startsWith(github.event.action, 'Deauther V2.5')
-    name: "Compile ESP8266 Deauther V2.5 .bin file"
+  build-deauther-v2:
+    if: startsWith(github.event.action, 'Deauther V2')
+    name: "Compile ESP8266 Deauther V2 .bin file"
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Runs
